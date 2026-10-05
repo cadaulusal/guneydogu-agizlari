@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Güneydoğu Anadolu Ağızları</title>
+
+<meta name="description"
+content="Güneydoğu Anadolu Bölgesi'ndeki yerel kelime ve ifadeleri inceleyen TÜBİTAK projesi.">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Arial, sans-serif;
+    background: #f6f7fb;
+    color: #20242c;
+    line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    min-height: 620px;
+    background:
+        linear-gradient(135deg, rgba(25,35,70,.96), rgba(71,48,105,.92));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before,
+header::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,.06);
+}
+
+header::before {
+    width: 500px;
+    height: 500px;
+    top: -250px;
+    right: -150px;
+}
+
+header::after {
+    width: 350px;
+    height: 350px;
+    bottom: -180px;
+    left: -100px;
+}
+
+.hero {
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 30px;
+    font-size: 14px;
+    margin-bottom: 25px;
+    background: rgba(255,255,255,.08);
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 78px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+    letter-spacing: -2px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 20px;
+    color: rgba(255,255,255,.85);
+}
+
+.hero-buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.primary-btn {
+    background: white;
+    color: #252b4b;
+}
+
+.secondary-btn {
+    border: 1px solid rgba(255,255,255,.4);
+    color: white;
+    background: rgba(255,255,255,.08);
+}
+
+.hero-buttons a:hover {
+    transform: translateY(-3px);
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e6e8ee;
+}
+
+.nav-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-weight: 800;
+    color: #30375d;
+    font-size: 18px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555b68;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #30375d;
+}
+
+/* ================= GENERAL ================= */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 90px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: #6971a8;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    margin-top: 8px;
+    color: #252b3b;
+}
+
+.section-title p {
+    max-width: 650px;
+    margin: 15px auto 0;
+    color: #707683;
+}
+
+/* ================= STATS ================= */
+
+.stats {
+    margin-top: -55px;
+    position: relative;
+    z-index: 5;
+}
+
+.stats-grid {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.08);
+    overflow: hidden;
+}
+
+.stat {
+    padding: 30px;
+    text-align: center;
+    border-right: 1px solid #eee;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat strong {
+    display: block;
+    font-size: 32px;
+    color: #30375d;
+}
+
+.stat span {
+    color: #777;
+}
+
+/* ================= SEARCH ================= */
+
+.search-area {
+    max-width: 850px;
+    margin: auto;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 18px 22px;
+    border: 1px solid #dddfe7;
+    border-radius: 15px;
+    font-size: 16px;
+    outline: none;
+    background: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,.04);
+}
+
+.search-box input:focus {
+    border-color: #6971a8;
+}
+
+/* ================= FILTERS ================= */
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 25px 0 45px;
+}
+
+.filter {
+    border: 1px solid #dddfe7;
+    background: white;
+    padding: 9px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #626876;
+    transition: .2s;
+}
+
+.filter:hover,
+.filter.active {
+    background: #30375d;
+    color: white;
+    border-color: #30375d;
+}
+
+/* ================= WORD CARDS ================= */
+
+.word-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.word-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    border: 1px solid #e9eaf0;
+    transition: .25s;
+    position: relative;
+    overflow: hidden;
+}
+
+.word-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+.word-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #6971a8;
+}
+
+.word {
+    font-size: 27px;
+    font-weight: 800;
+    color: #30375d;
+}
+
+.meaning {
+    margin-top: 10px;
+    color: #555c68;
+}
+
+.city {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 6px 11px;
+    border-radius: 20px;
+    background: #f0f1f7;
+    color: #596080;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: white;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 30px;
+    margin-bottom: 18px;
+    color: #292f44;
+}
+
+.about-text p {
+    color: #626875;
+    margin-bottom: 15px;
+}
+
+.info-box {
+    padding: 30px;
+    border-radius: 20px;
+    background: #f5f6fa;
+    border: 1px solid #e5e7ef;
+}
+
+.info-box h4 {
+    color: #30375d;
+    margin-bottom: 15px;
+}
+
+.info-box ul {
+    padding-left: 20px;
+    color: #606674;
+}
+
+.info-box li {
+    margin-bottom: 10px;
+}
+
+/* ================= METHODOLOGY ================= */
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.method-card {
+    background: white;
+    border: 1px solid #e6e8ef;
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.number {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #30375d;
+    color: white;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.method-card h3 {
+    margin-bottom: 10px;
+}
+
+.method-card p {
+    color: #686e7b;
+}
+
+/* ================= SOURCES ================= */
+
+.sources {
+    background: #f0f1f6;
+}
+
+.source-list {
+    max-width: 800px;
+    margin: auto;
+}
+
+.source {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    border: 1px solid #e3e5eb;
+}
+
+.source strong {
+    display: block;
+    color: #30375d;
+}
+
+.source span {
+    color: #747985;
+    font-size: 14px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #202438;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer p {
+    color: rgba(255,255,255,.65);
+    font-size: 14px;
+}
+
+.footer-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 850px) {
+
+    .word-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .method-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .nav-inner {
+        justify-content: center;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .stat:last-child {
+        border-bottom: none;
+    }
+
+    .word-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 70px 18px;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+
+<header>
+
+<div class="hero">
+
+<div class="badge">
+TÜBİTAK Araştırma Projesi
+</div>
+
+<h1>
+Güneydoğu Anadolu<br>
+Ağızları
+</h1>
+
+<p>
+Güneydoğu Anadolu Bölgesi'nde kullanılan yerel kelime
+ve ifadeleri keşfediyor, anlamlarını ve bölgesel
+kullanımlarını kayıt altına alıyoruz.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#kelimeler" class="primary-btn">
+Kelimeleri Keşfet
+</a>
+
+<a href="#proje" class="secondary-btn">
+Proje Hakkında
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="nav-inner">
+
+<div class="logo">
+GDA Ağızları
+</div>
+
+<div class="nav-links">
+
+<a href="#kelimeler">Kelimeler</a>
+<a href="#proje">Proje</a>
+<a href="#yontem">Yöntem</a>
+<a href="#kaynaklar">Kaynakça</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat">
+
+<strong id="wordCount">0</strong>
+
+<span>Kelime</span>
+
+</div>
+
+<div class="stat">
+
+<strong>9</strong>
+
+<span>İl</span>
+
+</div>
+
+<div class="stat">
+
+<strong>1</strong>
+
+<span>Araştırma Projesi</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= WORDS ================= -->
+
+<section id="kelimeler">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Söz Varlığı</span>
+
+<h2>Yerel Kelimeleri Keşfet</h2>
+
+<p>
+Bir kelime yazabilir veya şehir seçerek
+bölgesel kullanımları inceleyebilirsiniz.
+</p>
+
+</div>
+
+
+<div class="search-area">
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="Kelime ara... örneğin: küncü"
+>
+
+</div>
+
+
+<div class="filters">
+
+<button class="filter active" data-city="Tümü">
+Tümü
+</button>
+
+<button class="filter" data-city="Adıyaman">
+Adıyaman
+</button>
+
+<button class="filter" data-city="Batman">
+Batman
+</button>
+
+<button class="filter" data-city="Diyarbakır">
+Diyarbakır
+</button>
+
+<button class="filter" data-city="Gaziantep">
+Gaziantep
+</button>
+
+<button class="filter" data-city="Kilis">
+Kilis
+</button>
+
+<button class="filter" data-city="Mardin">
+Mardin
+</button>
+
+<button class="filter" data-city="Siirt">
+Siirt
+</button>
+
+<button class="filter" data-city="Şanlıurfa">
+Şanlıurfa
+</button>
+
+<button class="filter" data-city="Şırnak">
+Şırnak
+</button>
+
+</div>
+
+</div>
+
+
+<div class="word-grid" id="wordGrid"></div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="proje" class="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Proje</span>
+
+<h2>Bu Çalışmanın Amacı</h2>
+
+</div>
+
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<h3>Dilin bölgesel çeşitliliğini keşfediyoruz.</h3>
+
+<p>
+Türkçenin farklı bölgelerdeki kullanımı,
+tarih boyunca çeşitli kültürler ve topluluklarla
+etkileşim sonucunda zengin bir söz varlığı oluşturmuştur.
+</p>
+
+<p>
+Bu projede Güneydoğu Anadolu Bölgesi'nde kullanılan
+yerel kelime ve ifadeler araştırılmakta; bu kelimelerin
+standart Türkçedeki karşılıkları, kullanım alanları
+ve bölgesel özellikleri incelenmektedir.
+</p>
+
+<p>
+Amacımız yalnızca kelimeleri listelemek değil,
+aynı zamanda bölgesel dil çeşitliliğinin kültürel
+miras açısından önemini ortaya koymaktır.
+</p>
+
+</div>
+
+
+<div class="info-box">
+
+<h4>Araştırmada Neleri İnceliyoruz?</h4>
+
+<ul>
+
+<li>Yerel kelime ve ifadeler</li>
+
+<li>Kelimenin standart Türkçedeki karşılığı</li>
+
+<li>Kullanıldığı il veya yöre</li>
+
+<li>Kelimenin kökeni ve dilsel özellikleri</li>
+
+<li>Akademik ve güvenilir kaynaklar</li>
+
+<li>Bölgesel dil çeşitliliği</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= METHOD ================= -->
+
+<section id="yontem">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Araştırma Süreci</span>
+
+<h2>Nasıl Çalışıyoruz?</h2>
+
+<p>
+Araştırmamızda kelimelerin yalnızca anlamını değil,
+kullanım bağlamını ve kaynağını da dikkate alıyoruz.
+</p>
+
+</div>
+
+
+<div class="method-grid">
+
+
+<div class="method-card">
+
+<div class="number">1</div>
+
+<h3>Kelimeyi Belirleme</h3>
+
+<p>
+Bölgesel kullanımlarda standart Türkçeden
+farklılaşan kelimeleri belirliyoruz.
+</p>
+
+</div>
+
+
+<div class="method-card">
+
+<div class="number">2</div>
+
+<h3>Kaynak Araştırması</h3>
+
+<p>
+TDK, akademik çalışmalar, ağız araştırmaları
+ve güvenilir yayınlardan bilgi topluyoruz.
+</p>
+
+</div>
+
+
+<div class="method-card">
+
+<div class="number">3</div>
+
+<h3>Karşılaştırma</h3>
+
+<p>
+Yerel kullanımı standart Türkçedeki karşılığıyla
+karşılaştırıyor ve bölgesel özellikleri inceliyoruz.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SOURCES ================= -->
+
+<section id="kaynaklar" class="sources">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Kaynakça</span>
+
+<h2>Kullandığımız Kaynaklar</h2>
+
+<p>
+Araştırmanın güvenilirliğini artırmak amacıyla
+akademik ve kurumsal kaynaklardan yararlanıyoruz.
+</p>
+
+</div>
+
+
+<div class="source-list">
+
+<div class="source">
+
+<strong>
+Türk Dil Kurumu — Ağız Araştırmaları
+</strong>
+
+<span>
+Türkiye Türkçesi Ağız Araştırmaları Veri Tabanı
+</span>
+
+</div>
+
+
+<div class="source">
+
+<strong>
+Türk Dil Kurumu — Derleme Sözlüğü
+</strong>
+
+<span>
+Türkiye'nin farklı bölgelerinden derlenen
+yerel söz varlığı.
+</span>
+
+</div>
+
+
+<div class="source">
+
+<strong>
+Akademik Ağız Araştırmaları
+</strong>
+
+<span>
+Üniversitelerin yayımladığı lisansüstü çalışmalar,
+makaleler ve bölgesel ağız araştırmaları.
+</span>
+
+</div>
+
+
+<div class="source">
+
+<strong>
+MEB ve Yerel Kültür Yayınları
+</strong>
+
+<span>
+Bölgesel kültür ve dil çalışmalarında kullanılan
+yerel kaynaklar.
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-title">
+Güneydoğu Anadolu Ağızları
+</div>
+
+<p>
+TÜBİTAK Araştırma Projesi • Dil • Kültür • Yerel Söz Varlığı
+</p>
+
+</footer>
+
+
+<script>
+
+/* ==================================================
+   KELİME VERİLERİ
+
+   Yeni kelime eklemek için aşağıdaki yapıyı kopyala:
+
+   {
+       word: "Kelime",
+       meaning: "Anlamı",
+       city: "İl"
+   }
+
+================================================== */
+
+const words = [
+
+    {
+        word: "İsot",
+        meaning: "Biber",
+        city: "Şanlıurfa"
+    },
+
+    {
+        word: "Küncü",
+        meaning: "Susam",
+        city: "Kilis"
+    },
+
+    {
+        word: "Kastel",
+        meaning: "Çeşme",
+        city: "Kilis"
+    },
+
+    {
+        word: "Kahke",
+        meaning: "Halka biçiminde çörek",
+        city: "Kilis"
+    },
+
+    {
+        word: "Acer",
+        meaning: "Yeni",
+        city: "Mardin"
+    },
+
+    {
+        word: "Aşkar",
+        meaning: "Sarı saçlı kimse",
+        city: "Mardin"
+    },
+
+    {
+        word: "Sarınç",
+        meaning: "Sarnıç",
+        city: "Mardin"
+    },
+
+    {
+        word: "Zembil",
+        meaning: "Sepet",
+        city: "Mardin"
+    },
+
+    {
+        word: "Bibi",
+        meaning: "Hala",
+        city: "Adıyaman"
+    },
+
+    {
+        word: "Zumzıh",
+        meaning: "Yumruk",
+        city: "Adıyaman"
+    },
+
+    {
+        word: "Süllim",
+        meaning: "Merdiven",
+        city: "Adıyaman"
+    },
+
+    {
+        word: "Fırt",
+        meaning: "Bir yudum",
+        city: "Adıyaman"
+    },
+
+    {
+        word: "Bıldır",
+        meaning: "Geçen yıl",
+        city: "Batman"
+    },
+
+    {
+        word: "Cıncık",
+        meaning: "Cam parçası / küçük cam eşya",
+        city: "Batman"
+    },
+
+    {
+        word: "Kelek",
+        meaning: "Kavun",
+        city: "Batman"
+    },
+
+    {
+        word: "Şıllık",
+        meaning: "Bir çeşit tatlı",
+        city: "Batman"
+    },
+
+    {
+        word: "Babo",
+        meaning: "Baba",
+        city: "Siirt"
+    },
+
+    {
+        word: "Bıttım",
+        meaning: "Menengiç",
+        city: "Siirt"
+    },
+
+    {
+        word: "Cıfır",
+        meaning: "Çok küçük / minicik",
+        city: "Siirt"
+    },
+
+    {
+        word: "Dayê",
+        meaning: "Anne",
+        city: "Şırnak"
+    },
+
+    {
+        word: "Bavo",
+        meaning: "Baba",
+        city: "Şırnak"
+    },
+
+    {
+        word: "Lawo",
+        meaning: "Oğlan / erkek çocuk",
+        city: "Şırnak"
+    },
+
+    {
+        word: "Bapir",
+        meaning: "Nine / büyükanne",
+        city: "Şırnak"
+    },
+
+    {
+        word: "Peyati",
+        meaning: "Yaya / yürüyerek",
+        city: "Diyarbakır"
+    }
+
+];
+
+
+/* ==========================
+   ELEMENTLER
+========================== */
+
+const grid = document.getElementById("wordGrid");
+const search = document.getElementById("search");
+const filters = document.querySelectorAll(".filter");
+const wordCount = document.getElementById("wordCount");
+
+let selectedCity = "Tümü";
+
+
+/* ==========================
+   KELİMELERİ GÖSTER
+========================== */
+
+function renderWords() {
+
+    const query = search.value.toLowerCase().trim();
+
+    const filtered = words.filter(item => {
+
+        const matchesCity =
+            selectedCity === "Tümü" ||
+            item.city === selectedCity;
+
+        const matchesSearch =
+            item.word.toLowerCase().includes(query) ||
+            item.meaning.toLowerCase().includes(query);
+
+        return matchesCity && matchesSearch;
+
+    });
+
+
+    grid.innerHTML = "";
+
+
+    if (filtered.length === 0) {
+
+        grid.innerHTML = `
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:60px;
+                color:#777;
+            ">
+                <h3>Kelime bulunamadı.</h3>
+                <p>Başka bir kelime veya şehir deneyin.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    filtered.forEach(item => {
+
+        const card = document.createElement("div");
+
+        card.className = "word-card";
+
+        card.innerHTML = `
+
+            <div class="word">
+                ${item.word}
+            </div>
+
+            <div class="meaning">
+                ${item.meaning}
+            </div>
+
+            <span class="city">
+                ${item.city}
+            </span>
+
+        `;
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+
+/* ==========================
+   ARAMA
+========================== */
+
+search.addEventListener("input", renderWords);
+
+
+/* ==========================
+   ŞEHİR FİLTRESİ
+========================== */
+
+filters.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filters.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        selectedCity =
+            button.dataset.city;
+
+        renderWords();
+
+    });
+
+});
+
+
+/* ==========================
+   KELİME SAYISI
+========================== */
+
+wordCount.textContent = words.length;
+
+
+/* ==========================
+   BAŞLANGIÇ
+========================== */
+
+renderWords();
+
+</script>
+
+
+</body>
+</html>
